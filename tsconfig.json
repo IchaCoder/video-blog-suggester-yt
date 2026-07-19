@@ -1,0 +1,3 @@
+{
+  "extends": "@rag/config/tsconfig.base.json"
+}

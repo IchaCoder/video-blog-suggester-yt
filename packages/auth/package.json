@@ -1,0 +1,24 @@
+{
+  "name": "@rag/auth",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@rag/db": "workspace:*",
+    "@rag/env": "workspace:*",
+    "better-auth": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@rag/config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}

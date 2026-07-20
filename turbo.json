@@ -10,8 +10,15 @@
     "GITHUB_CLIENT_SECRET"
   ],
   "tasks": {
+    "db:generate": {
+      "cache": false
+    },
+    "db:migrate": {
+      "cache": false,
+      "dependsOn": ["^db:generate"]
+    },
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^db:migrate", "^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
@@ -27,13 +34,6 @@
     },
     "db:push": {
       "cache": false
-    },
-    "db:generate": {
-      "cache": false
-    },
-    "db:migrate": {
-      "cache": false,
-      "persistent": true
     },
     "db:studio": {
       "cache": false,

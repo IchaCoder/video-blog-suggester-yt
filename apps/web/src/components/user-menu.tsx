@@ -32,7 +32,14 @@ export default function UserMenu() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger render={<Button variant="outline" />}>
+      <DropdownMenuTrigger render={<Button variant="outline" className="gap-2" />}>
+        {session.user.image ? (
+          <img
+            src={session.user.image}
+            alt={session.user.name}
+            className="size-6 rounded-full object-cover"
+          />
+        ) : null}
         {session.user.name}
       </DropdownMenuTrigger>
       <DropdownMenuContent className="bg-card">

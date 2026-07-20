@@ -15,6 +15,11 @@ export function createAuth() {
       schema: schema,
     }),
     trustedOrigins: [env.CORS_ORIGIN],
+    advanced: {
+      database: {
+        generateId: "uuid",
+      },
+    },
     socialProviders: {
       github: {
         clientId: env.GITHUB_CLIENT_ID,
